@@ -1,18 +1,20 @@
-CC = clang
-CFLAGS = -Wall -Wextra
-SRC = $(wildcard *.c)
-OBJ = $(patsubst %.c, %.o, $(SRC))
-TARGET = clox
+CC 		= clang
+CFLAGS 	= -Wall -Wextra
+SRC 	= $(wildcard src/*.c)
+OBJ 	= $(patsubst src/%.c, obj/%.o, $(SRC))
+TARGET 	= clox
 
 .PHONY: clean all
+
+$(shell mkdir -p obj)
 
 all: $(TARGET)
 
 $(TARGET): $(OBJ)
-	$(CC) $(CFLAGS) -o $@ $^
+	$(CC) -o $@ $^
 
-%.o:%.c
-	$(CC) $(CFLAGS) -c -o $@ $<
+obj/%.o:src/%.c
+	$(CC) $(CFLAGS) -I inc/ -c -o $@ $<
 
 clean:
-	rm -f $(OBJ) $(TARGET)
+	rm -rf obj/ $(TARGET)

@@ -1,0 +1,17 @@
+// this is a comment
+fun factorial(n) {
+    if (n <= 1) {   // comment 1
+        return 1;   // comment 2
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+print "Hello, Lox!";
+
+// define variable
+var number = 5;
+var result = factorial(number);
+
+// output
+print "The factorial of " + number + " is " + result;
