@@ -1,4 +1,4 @@
-CC 		= clang
+CC 	= clang
 CFLAGS 	= -Wall -Wextra
 SRC 	= $(wildcard src/*.c)
 OBJ 	= $(patsubst src/%.c, obj/%.o, $(SRC))
