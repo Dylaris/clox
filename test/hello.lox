@@ -1,0 +1,26 @@
+var a = 10; 
+var b = 10;
+
+var is_equal;
+
+if (a == b) {
+    var a = "a";
+    var b = "b";
+    print a + " == " + "b";
+    is_equal = true;
+} else {
+    var a = "a";
+    var b = "b";
+    print a + " != " + "b";
+    is_equal = false;
+}
+
+var times = 10;
+while (times > 0) {
+    times = times - 1;
+    print times;
+}
+
+for (var c = 5; c > 0; c = c - 1) {
+    print "hello" + " world";
+}
